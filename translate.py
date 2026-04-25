@@ -23,7 +23,7 @@ def translate_with_retry(text, context, retries=3):
                 json={
                     "model": MODEL,
                     "messages": [
-                        {"role": "system", "content": "Traduci EN→IT mantenendo tono e registro. Solo testo tradotto."},
+                        {"role": "system", "content": "Traduci EN→IT mantenendo tono, registro e tutta la formattazione originale (Markdown, grassetto, corsivo, codice inline, link, elenchi, titoli, HTML inline, ecc.). Non aggiungere né rimuovere markup. Restituisci solo il testo tradotto con la formattazione intatta."},
                         {"role": "user", "content": f"CONTESTO:
 {context}
 
